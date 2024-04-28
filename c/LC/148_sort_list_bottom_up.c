@@ -1,29 +1,6 @@
 // name: Zhaoshan Duan
 // email: duan.zha@northeastern.edu
-#include<stdio.h>
-#include<stdlib.h>
-
-// Define the linked list node structure
-struct ListNode {
-    int val;
-    struct ListNode* next;
-};
-
-struct ListNode* createNode(int val) {
-    struct ListNode* node = (struct ListNode*) malloc(sizeof(struct ListNode));
-    node->val = val;
-    node->next = NULL;
-    return node;
-}
-
-void printList(struct ListNode* head) {
-    while(head) {
-        printf("%d -> ", head->val);
-        head = head->next;
-    }
-    printf(" NULL");
-
-}
+// Leetcode link: https://leetcode.com/problems/sort-list/description/
 
 int getLength(struct ListNode* head) {
     int i = 0;
@@ -44,7 +21,6 @@ struct ListNode* merge(struct ListNode* l1, struct ListNode* l2, struct ListNode
             cur->next = l2;
             l2 = l2->next;    
         }
-
         cur = cur->next;
     }
 
@@ -54,6 +30,7 @@ struct ListNode* merge(struct ListNode* l1, struct ListNode* l2, struct ListNode
     while (cur->next) cur = cur->next;
     return cur;
 }
+
 // split a subsection based on the width
 struct ListNode* split(struct ListNode* head, int width){
     // if width is 1, the group is the node itself
@@ -72,13 +49,11 @@ struct ListNode* split(struct ListNode* head, int width){
     return nextStart;
 }
 
-
 struct ListNode* sortList(struct ListNode* head) {
     if (!head || !head->next) return head;
     
     // setup 
-   
-    // get lengt of the list 
+    // get length of the list 
     int length = getLength(head);
 
     // dummy point that points to the head of the list
@@ -119,26 +94,5 @@ struct ListNode* sortList(struct ListNode* head) {
         // once start null, it's at the end of the list, increase the size by 2 
         width *= 2;
     }
-
     return dummy.next;
-}
-
-
-int main() {
-    struct ListNode* head = createNode(4);
-    head->next = createNode(2);
-    head->next->next = createNode(1);
-    head->next->next->next = createNode(3);
-    
-    printf("Original list: ");
-    printList(head);
-    printf("\n");
-
-    head = sortList(head);
-
-    printf("Sorted List: ");
-    printList(head);
-
-
-    return 0;
 }

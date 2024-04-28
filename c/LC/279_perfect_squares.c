@@ -1,6 +1,6 @@
-#include<stdio.h>
-#include<stdlib.h>
-
+// name: Zhaoshan Duan 
+// email: duan.zha@northeastern.edu
+// Leetcode link: https://leetcode.com/problems/perfect-squares/description/ 
 int min(int a, int b) {
     return (a < b) ? a: b;
 }
@@ -27,15 +27,4 @@ int numSquares(int n) {
         }
     }
     return dp[n];
-}
-
-void printResult(int n) { 
-    printf("Given %d, there are %d perfect square numbers that sum to %d\n", n, numSquares(n), n);
-}
-
-int main() {
-    printResult(12);
-    printResult(13);
-
-    return 0;
 }

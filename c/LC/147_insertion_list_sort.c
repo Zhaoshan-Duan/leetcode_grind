@@ -1,9 +1,6 @@
 // name: Zhaoshan Duan
 // email: duan.zha@northeastern.edu
-
-#include<stdio.h>
-#include<stdlib.h>
-
+// Leetcode link: https://leetcode.com/problems/insertion-sort-list/description/
 struct ListNode {
     int val;
     struct ListNode* next;

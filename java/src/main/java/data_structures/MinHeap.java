@@ -18,6 +18,7 @@ public class MinHeap {
   }
 
   int delete() {
+    return 0;
   }
   void heapifyUp(int idx) {
 

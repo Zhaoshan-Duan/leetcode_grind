@@ -1,5 +1,6 @@
-#include<stdio.h>
-#include<stdlib.h>
+// name: Zhaoshan Duan
+// email: duan.zha@northeastern.edu
+// Leetcode link: https://leetcode.com/problems/cheapest-flights-within-k-stops/description/
 int min(int a, int b) {
     return (a<b) ? a : b;
 }
@@ -40,16 +41,3 @@ int findCheapestPrice(int n, int** flights, int flightsSize, int* flightsColSize
 }
 
 
-int main() {
-    int n = 3; // Number of nodes
-    int flightsSize = 3; // Number of flights
-    int src = 0, dst = 2, K = 1;
-    int flights[3][3] = {{0,1,100},{1,2,100},{0,2,500}};
-    int* flightsColSize = &flights[0][1]; // Not used
-
-    int result = findCheapestPrice(n, (int**)flights, flightsSize, flightsColSize, src, dst, K);
-
-    printf("Cheapest price from %d to %d with at most %d stops: %d\n", src, dst, K, result);
-
-    return 0;
-}
